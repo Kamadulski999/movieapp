@@ -1,15 +1,13 @@
 package com.kamadulski.movieapp.entity;
 
+
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.sql.Timestamp;
-
-
 @Entity
-@Table(name="reviews")
+@Table(name="ratings")
 @Data
-public class Reviews {
+public class Ratings {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -17,18 +15,11 @@ public class Reviews {
     private Long id;
 
     @Column(name="movie_id")
-    private int movieId;
-
-    @Column(name="title")
-    private String title;
-
-    @Column(name="review_text")
-    private String reviewText;
+    private Long movieId;
 
     @Column(name="user_email")
     private String userEmail;
 
-    @Column(name="created_at")
-    private Timestamp createdAt;
-
+    @Column(name="rating")
+    private int rating;
 }
