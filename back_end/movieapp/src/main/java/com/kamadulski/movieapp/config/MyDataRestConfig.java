@@ -24,10 +24,12 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
                 HttpMethod.PUT};
 
         config.exposeIdsFor(Review.class);
+        config.exposeIdsFor(Reaction.class);
 
 
         disableHttpMethods(Review.class, config, theUnsupportedActions);
-   
+        disableHttpMethods(Reaction.class, config, theUnsupportedActions);
+
 
         /* Configure CORS Mapping */
         cors.addMapping(config.getBasePath() + "/**")

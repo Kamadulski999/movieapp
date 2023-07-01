@@ -19,7 +19,7 @@ public class Review {
     private Long id;
 
     @Column(name="movie_id")
-    private int movieId;
+    private Long movieId;
 
     @Column(name="title")
     private String title;
