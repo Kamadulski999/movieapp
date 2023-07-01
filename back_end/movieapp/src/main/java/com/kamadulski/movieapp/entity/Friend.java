@@ -1,10 +1,7 @@
 package com.kamadulski.movieapp.entity;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -13,10 +10,15 @@ import lombok.Data;
 public class Friend {
 
     @Id
-    @Column(name="friend1_email")
-    private String friend1Email;
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="id")
+    private Long id;
 
-    @Column(name="friend2_email")
-    private String friend2Email;
+
+    @Column(name="friend1")
+    private String friend1;
+
+    @Column(name="friend2")
+    private String friend2;
 
 }

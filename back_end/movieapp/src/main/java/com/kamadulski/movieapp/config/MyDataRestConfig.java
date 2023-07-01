@@ -1,5 +1,7 @@
 package com.kamadulski.movieapp.config;
 
+import com.kamadulski.movieapp.entity.Friend;
+import com.kamadulski.movieapp.entity.Rating;
 import com.kamadulski.movieapp.entity.Reaction;
 import com.kamadulski.movieapp.entity.Review;
 import org.springframework.context.annotation.Configuration;
@@ -25,10 +27,14 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
 
         config.exposeIdsFor(Review.class);
         config.exposeIdsFor(Reaction.class);
+        config.exposeIdsFor(Rating.class);
+        config.exposeIdsFor(Friend.class);
 
 
         disableHttpMethods(Review.class, config, theUnsupportedActions);
         disableHttpMethods(Reaction.class, config, theUnsupportedActions);
+        disableHttpMethods(Rating.class, config, theUnsupportedActions);
+        disableHttpMethods(Friend.class, config, theUnsupportedActions);
 
 
         /* Configure CORS Mapping */
